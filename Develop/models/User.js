@@ -16,15 +16,19 @@ const UserSchema = new Schema(
       default: '[/.+@.+\..+/]',
     },
 
-    thoughts: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought',
+        },
+    ],
 
-    friends: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        },
+    ],
   },
   {
     toJSON: {
@@ -34,4 +38,5 @@ const UserSchema = new Schema(
   }
 );
 
+const User = model('User', UserSchema);
 module.exports = User;
