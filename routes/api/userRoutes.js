@@ -7,7 +7,7 @@ updateUser,
 deleteUser,
 addFriend,
 removeFriend,
-} = require('../../controllers/userController');
+} = require('../../../controllers/userController');
 
 // /api/users
 router.route('/').get(getAllUser).post(createUser);
