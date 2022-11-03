@@ -16,9 +16,9 @@ module.exports = {
             return res.status(500).json(err);
           });
       },
- //Get one user by id
- getUserById(req, res) {
-  User.findOne({ _id: req.params.id })
+ //Get one Thought by id
+ getThoughtById(req, res) {
+  Thought.findOne({ _id: req.params.id })
     .populate({
       path: "reactions",
       select: "-__v",
